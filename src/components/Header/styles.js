@@ -40,6 +40,7 @@ export const Logo = styled.img.attrs({
 export const SectionIcons = styled.section`
   display: flex;
   align-items: center;
+  padding-right: 10px;
 `;
 
 export const ButtonSearch = styled.button`

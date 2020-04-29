@@ -8,9 +8,9 @@ import {
   ProductPrice,
 } from "./styles";
 
-import no_image from '../../assets/no_image.png';
+import no_image from "../../assets/no_image.png";
 
-export default function Product({ imgLink = no_image, name, price }) {
+export default function Product({ imgLink, name, price }) {
   const formartLink = (name) => {
     const link = name.toLowerCase().replace(/\W/g, "-");
 
@@ -19,7 +19,7 @@ export default function Product({ imgLink = no_image, name, price }) {
 
   return (
     <Container to={`/product/${formartLink(name)}`}>
-      <ImageProduct src={no_image} />
+      <ImageProduct src={imgLink !== "" ? imgLink : no_image} alt={name} />
       <DetailProduct>
         <ProductName>{name}</ProductName>
         <ProductPrice>{price}</ProductPrice>

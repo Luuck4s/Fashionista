@@ -15,7 +15,7 @@ import { FiSearch, FiShoppingBag } from "react-icons/fi";
 
 import fashionista_img from "../../assets/fashionista.png";
 
-export default function Header() {
+export default function Header({counter}) {
   return (
     <Container>
       <Nav>
@@ -28,7 +28,7 @@ export default function Header() {
           <ButtonSearch>
             <FiSearch size={20} />
           </ButtonSearch>
-          <ButtonCart quantityItems={4}>
+          <ButtonCart quantityItems={counter}>
             <FiShoppingBag size={20} />
           </ButtonCart>
         </SectionIcons>
