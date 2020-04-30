@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled(Link)`
@@ -8,6 +8,7 @@ export const Container = styled(Link)`
   width: calc(100% / 1);
   min-height: 300px;
   margin: 0px 0px 20px 10px;
+  position: relative;
 
   @media (min-width: 525px) {
     width: calc((100% / 2) - 10px);
@@ -31,6 +32,16 @@ export const ImageProduct = styled.img`
   color: #000;
 `;
 
+export const DiscountPercent = styled.span`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #212529;
+  color: #F8F8F8;
+  font-size: 0.75rem;
+  padding: 2px;
+`
+
 export const DetailProduct = styled.section`
   display: flex;
   flex-direction: column;
@@ -44,7 +55,25 @@ export const ProductName = styled.h3`
   margin: 10px 0px 5px 0px;
 `;
 
-export const ProductPrice = styled.span`
+export const ProductPrice = styled.div`
+  display: flex;
+`;
+
+export const RegularPrice = styled.span`
+  font-size: 0.9rem;
+  color: #212529;
+
+  ${(props) =>
+    props.scratched &&
+    css`
+      font-size: 0.8rem;
+      color: #a7a7a7;
+      text-decoration: line-through;
+      margin-right: 10px;
+    `}
+`;
+
+export const ActualPrice = styled.span`
   font-size: 0.9rem;
   color: #212529;
 `;

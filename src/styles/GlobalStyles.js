@@ -9,7 +9,7 @@ export default createGlobalStyle`
     }
     body{
         font: 400 14px Roboto, sans-serif;
-        background: #f0f0f5;
+        background: #F8F8F8;
         -webkit-font-smoothing: antialiased; 
     }
     button{

@@ -28,12 +28,7 @@ function Home({ products }) {
       <ContainerSize>
         <ProductsArea>
           {products.map((product) => (
-            <Product
-              key={product.code_color}
-              name={product.name}
-              price={product.actual_price}
-              imgLink={product.image && product.image}
-            />
+            <Product key={product.code_color} {...product} />
           ))}
         </ProductsArea>
       </ContainerSize>
