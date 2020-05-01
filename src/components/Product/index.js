@@ -11,6 +11,8 @@ import {
   ActualPrice,
 } from "./styles";
 
+import { format } from "../../utils/FormatLink";
+
 import no_image from "../../assets/no_image.png";
 
 export default function Product({
@@ -21,14 +23,8 @@ export default function Product({
   actual_price,
   discount_percentage,
 }) {
-  const formartLink = (name) => {
-    const link = name.toLowerCase().replace(/\W/g, "-");
-
-    return link;
-  };
-
   return (
-    <Container to={`/product/${formartLink(name)}`}>
+    <Container to={`/product/${format(name, true)}`}>
       <ImageProduct src={image !== "" ? image : no_image} alt={name} />
       {on_sale && <DiscountPercent>-{discount_percentage}</DiscountPercent>}
       <DetailProduct>

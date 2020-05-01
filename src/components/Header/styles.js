@@ -1,4 +1,4 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export const Container = styled.div`
@@ -57,10 +57,6 @@ export const ButtonCart = styled.button`
   position: relative;
   padding: 10px;
 
-  ${(props) =>
-    props.quantityItems &&
-    css`
-  
   ::after{
     content: '${(props) => props.quantityItems}';
     font-size: 0.7rem;
@@ -77,5 +73,5 @@ export const ButtonCart = styled.button`
     position: absolute;
     top: 5px;
     right: 0;
-  }`}
+  }
 `;

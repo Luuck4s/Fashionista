@@ -15,7 +15,7 @@ import { FiSearch, FiShoppingBag } from "react-icons/fi";
 
 import fashionista_img from "../../assets/fashionista.png";
 
-export default function Header({counter}) {
+export default function Header({counter = 0}) {
   return (
     <Container>
       <Nav>

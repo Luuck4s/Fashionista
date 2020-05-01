@@ -5,13 +5,15 @@ export const Container = styled(Link)`
   text-decoration: none;
   display: flex;
   flex-direction: column;
-  width: calc(100% / 1);
+  width: calc((100% / 1) - 15px);
+  margin: 10px auto;
   min-height: 300px;
-  margin: 0px 0px 20px 10px;
   position: relative;
 
   @media (min-width: 525px) {
     width: calc((100% / 2) - 10px);
+    margin-right: 7.5px;
+    margin-left: 0px;
   }
 
   @media (min-width: 800px) {

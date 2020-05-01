@@ -1,6 +1,12 @@
 import React, { useEffect } from "react";
 
-import { Container, ContainerSize, ProductsArea } from "./styles";
+import {
+  Container,
+  ContainerSize,
+  CountArea,
+  CountProducts,
+  ProductsArea,
+} from "./styles";
 
 import { connect, useDispatch } from "react-redux";
 import { setInitialStore } from "../../store/actions/products";
@@ -26,6 +32,9 @@ function Home({ products }) {
     <Container>
       <Header counter={0} />
       <ContainerSize>
+        <CountArea>
+          <CountProducts>{products.length} Items</CountProducts>
+        </CountArea>
         <ProductsArea>
           {products.map((product) => (
             <Product key={product.code_color} {...product} />
