@@ -1,6 +1,6 @@
 export const format = (nameProduct, toLink = true) => {
   if (toLink) {
-    return nameProduct.toLowerCase().replace(/-/g, "-");
+    return nameProduct.toLowerCase().replace(/\s/g, "-");
   }
 
   return nameProduct

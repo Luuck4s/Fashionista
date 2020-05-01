@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 
 import { useParams } from "react-router-dom";
-import { connect } from "react-redux";
+import { connect, useDispatch } from "react-redux";
 
 import { Container, ContainerSize } from "./styles";
 
@@ -10,9 +10,13 @@ import SingleProduct from "../../components/SingleProduct";
 
 import { format } from "../../utils/FormatLink";
 
+import { setProductCart } from "../../store/actions/cart";
+
 function Product({ products }) {
   const [product, setProduct] = useState({});
   const { name } = useParams();
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const findProduct = () => {
@@ -28,12 +32,20 @@ function Product({ products }) {
     findProduct();
   }, [name, products]);
 
+  const addProductCart = (sizeProduct) => {
+    const productToCart = {
+      ...product,
+      selectedSize: sizeProduct,
+    };
+
+    dispatch(setProductCart(productToCart));
+  };
+
   return (
     <Container>
       <Header />
       <ContainerSize>
-        
-        <SingleProduct {...product} />
+        <SingleProduct addProductCard={addProductCart} {...product} />
       </ContainerSize>
     </Container>
   );

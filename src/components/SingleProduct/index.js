@@ -11,6 +11,7 @@ import {
   ActualPrice,
   Payment,
   SizesProduct,
+  ErrorSizeNotSelected,
   Sizes,
   SizesText,
   Size,
@@ -27,8 +28,20 @@ export default function SingleProduct({
   regular_price,
   installments,
   sizes = [],
+  addProductCard
 }) {
   const [sizeSelected, setSizeSelected] = useState("");
+  const [sizeNotSelected, setSizeNotSelected] = useState(false);
+
+  const handleAddProduct = () => {
+    if (!sizeSelected) {
+      setSizeNotSelected(true);
+      return;
+    }
+
+    setSizeNotSelected(false);
+    addProductCard(sizeSelected)
+  };
 
   return (
     <Container>
@@ -44,6 +57,11 @@ export default function SingleProduct({
         </PriceProduct>
         <SizesProduct>
           <SizesText>Escolha o tamanho</SizesText>
+          {sizeNotSelected && (
+            <ErrorSizeNotSelected>
+              É necessário escolher um tamanho!
+            </ErrorSizeNotSelected>
+          )}
           <Sizes>
             {sizes.map(
               (size) =>
@@ -59,8 +77,9 @@ export default function SingleProduct({
             )}
           </Sizes>
         </SizesProduct>
-        
-        <ButtonAddCart>Adicionar à Sacola</ButtonAddCart>
+        <ButtonAddCart onClick={handleAddProduct}>
+          Adicionar à Sacola
+        </ButtonAddCart>
       </DetailArea>
     </Container>
   );

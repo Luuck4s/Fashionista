@@ -145,3 +145,10 @@ export const ButtonAddCart = styled.button`
     transform: scale(0.98);
   }
 `;
+
+export const ErrorSizeNotSelected = styled.span`
+  font-size: 0.9rem;
+  color: #cf3838;
+  margin-top: 10px;
+  font-weight: 300;
+`

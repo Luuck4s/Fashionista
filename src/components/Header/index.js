@@ -1,5 +1,7 @@
 import React from "react";
 
+import { connect } from "react-redux";
+
 import {
   Container,
   Nav,
@@ -15,7 +17,7 @@ import { FiSearch, FiShoppingBag } from "react-icons/fi";
 
 import fashionista_img from "../../assets/fashionista.png";
 
-export default function Header({counter = 0}) {
+function Header({ count}) {
   return (
     <Container>
       <Nav>
@@ -28,7 +30,7 @@ export default function Header({counter = 0}) {
           <ButtonSearch>
             <FiSearch size={20} />
           </ButtonSearch>
-          <ButtonCart quantityItems={counter}>
+          <ButtonCart quantityItems={count}>
             <FiShoppingBag size={20} />
           </ButtonCart>
         </SectionIcons>
@@ -36,3 +38,9 @@ export default function Header({counter = 0}) {
     </Container>
   );
 }
+
+const mapStateToProps = (state) => ({
+  count: state.cart.count
+});
+
+export default connect(mapStateToProps)(Header);
