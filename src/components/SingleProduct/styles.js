@@ -17,18 +17,10 @@ export const ImageArea = styled.figure`
   margin: 0 auto;
   width: 100%;
 
-  @media (min-width: 800px) {
-    width: auto;
-    height: auto;
-  }
 `;
 
 export const Image = styled.img`
   width: 100%;
-
-  @media (min-width: 800px) {
-    width: auto;
-  }
 `;
 
 export const DetailArea = styled.section`

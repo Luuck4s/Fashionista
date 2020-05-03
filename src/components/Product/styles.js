@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
-import { Link } from "react-router-dom";
 
-export const Container = styled(Link)`
+export const Container = styled.section`
   text-decoration: none;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,7 @@ export const Container = styled(Link)`
   margin: 10px auto;
   min-height: 300px;
   position: relative;
+  cursor: pointer;
 
   @media (min-width: 525px) {
     width: calc((100% / 2) - 10px);

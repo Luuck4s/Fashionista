@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 
 export const Container = styled.div`
   width: 100vw;
@@ -28,8 +27,9 @@ export const SectionLogo = styled.section`
   display: flex;
 `;
 
-export const LinkLogo = styled(Link)`
+export const LinkLogo = styled.a`
   text-decoration: none;
+  cursor: pointer;
 `;
 
 export const Logo = styled.img.attrs({

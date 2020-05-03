@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useHistory } from "react-router-dom";
 import { connect } from "react-redux";
 
 import {
@@ -17,12 +17,18 @@ import { FiSearch, FiShoppingBag } from "react-icons/fi";
 
 import fashionista_img from "../../assets/fashionista.png";
 
-function Header({ count}) {
+function Header({ count }) {
+  const history = useHistory();
+
+  const handleClickLogo = () => {
+    history.push("/");
+  };
+
   return (
     <Container>
       <Nav>
         <SectionLogo>
-          <LinkLogo to={"/"}>
+          <LinkLogo onClick={handleClickLogo}>
             <Logo src={fashionista_img} alt="Fashionista" />
           </LinkLogo>
         </SectionLogo>
@@ -40,7 +46,7 @@ function Header({ count}) {
 }
 
 const mapStateToProps = (state) => ({
-  count: state.cart.count
+  count: state.cart.count,
 });
 
 export default connect(mapStateToProps)(Header);
