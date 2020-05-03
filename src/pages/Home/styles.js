@@ -23,7 +23,7 @@ export const CountArea = styled.section`
 
 export const CountProducts = styled.span`
   margin-left: 5px;
-  color: #a7a7a7;
+  color: #717171;
   font-size: 1.1rem;
   font-weight: 400;
 `;
@@ -31,7 +31,7 @@ export const CountProducts = styled.span`
 export const ProductsArea = styled.div`
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  align-items: baseline;
   flex-wrap: wrap;
   width: 100%;
 `;

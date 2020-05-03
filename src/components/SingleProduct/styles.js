@@ -1,5 +1,7 @@
 import styled, { css } from "styled-components";
 
+import { device } from "../../styles/Device";
+
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -7,7 +9,7 @@ export const Container = styled.div`
   margin: 10px auto;
   align-items: center;
 
-  @media (min-width: 800px) {
+  @media ${device.medium} {
     flex-wrap: nowrap;
     align-items: flex-start;
   }
@@ -16,7 +18,17 @@ export const Container = styled.div`
 export const ImageArea = styled.figure`
   margin: 0 auto;
   width: 100%;
+  position: relative;
+`;
 
+export const DiscountPercent = styled.span`
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: #212529;
+  color: #f8f8f8;
+  font-size: 0.95rem;
+  padding: 2px;
 `;
 
 export const Image = styled.img`
@@ -28,7 +40,7 @@ export const DetailArea = styled.section`
   flex-direction: column;
   width: 100%;
 
-  @media (min-width: 800px) {
+  @media ${device.medium} {
     margin-left: 10px;
   }
 `;
@@ -124,17 +136,16 @@ export const ButtonAddCart = styled.button`
   width: 100%;
   margin-top: 30px;
   margin-bottom: 10px;
-  transition: transform .3s;
+  transition: transform 0.3s;
   cursor: pointer;
 
-
-  @media (min-width: 800px) {
-    min-width: 300px;
-    max-width: 55%;
+  :hover {
+    transform: scale(0.98);
   }
 
-  :hover{
-    transform: scale(0.98);
+  @media ${device.medium} {
+    min-width: 300px;
+    max-width: 55%;
   }
 `;
 
@@ -143,4 +154,4 @@ export const ErrorSizeNotSelected = styled.span`
   color: #cf3838;
   margin-top: 10px;
   font-weight: 300;
-`
+`;

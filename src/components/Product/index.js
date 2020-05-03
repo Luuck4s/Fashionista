@@ -33,8 +33,8 @@ export default function Product({
 
   return (
     <Container onClick={handleClickProduct}>
-      <ImageProduct src={image !== "" ? image : no_image} alt={name} />
       {on_sale && <DiscountPercent>-{discount_percentage}</DiscountPercent>}
+      <ImageProduct src={image !== "" ? image : no_image} alt={name} />
       <DetailProduct>
         <ProductName>{name}</ProductName>
         <ProductPrice>

@@ -50,10 +50,7 @@ export const ButtonSearch = styled.button`
   outline: 0px;
 `;
 
-export const ButtonCart = styled.button`
-  border: none;
-  background: transparent;
-  outline: 0px;
+export const ButtonCart = styled(ButtonSearch)`
   position: relative;
   padding: 10px;
 

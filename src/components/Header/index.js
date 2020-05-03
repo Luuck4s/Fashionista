@@ -33,10 +33,10 @@ function Header({ count }) {
           </LinkLogo>
         </SectionLogo>
         <SectionIcons>
-          <ButtonSearch>
+          <ButtonSearch className="button-search">
             <FiSearch size={20} />
           </ButtonSearch>
-          <ButtonCart quantityItems={count}>
+          <ButtonCart className="button-cart" quantityItems={count}>
             <FiShoppingBag size={20} />
           </ButtonCart>
         </SectionIcons>

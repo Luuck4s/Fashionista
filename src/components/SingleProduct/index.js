@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import {
   Container,
   ImageArea,
+  DiscountPercent,
   Image,
   DetailArea,
   NameProduct,
@@ -25,10 +26,11 @@ export default function SingleProduct({
   name,
   actual_price,
   on_sale,
+  discount_percentage,
   regular_price,
   installments,
   sizes = [],
-  addProductCard
+  addProductCard,
 }) {
   const [sizeSelected, setSizeSelected] = useState("");
   const [sizeNotSelected, setSizeNotSelected] = useState(false);
@@ -40,12 +42,13 @@ export default function SingleProduct({
     }
 
     setSizeNotSelected(false);
-    addProductCard(sizeSelected)
+    addProductCard(sizeSelected);
   };
 
   return (
     <Container>
       <ImageArea>
+        {on_sale && <DiscountPercent>-{discount_percentage}</DiscountPercent>}
         <Image src={image !== "" ? image : no_image} alt={name} />
       </ImageArea>
       <DetailArea>
