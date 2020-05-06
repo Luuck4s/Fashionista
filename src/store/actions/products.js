@@ -1,6 +1,6 @@
-export const setInitialStore = (products) => {
+export const setInitialProducts = (products) => {
   return {
-    type: "SET_INITAL_STORE",
+    type: "SET_INITAL_PRODUCTS",
     products,
   };
 };

@@ -1,36 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
-import { useParams } from "react-router-dom";
 import { connect, useDispatch } from "react-redux";
+import { toggleCartVisible, addProductToCart } from "../../store/actions/cart";
+import {
+  setSelectedSize,
+  toggleErrorSelectedSize,
+} from "../../store/actions/product";
+import Header from "../../components/Header";
+import SingleProduct from "../../components/SingleProduct";
+import Cart from "../../components/Cart";
 
 import { Container, ContainerSize } from "./styles";
 
-import Header from "../../components/Header";
-import SingleProduct from "../../components/SingleProduct";
-
-import { format } from "../../utils/FormatLink";
-
-import { setProductCart } from "../../store/actions/cart";
-
-function Product({ products }) {
-  const [product, setProduct] = useState({});
-  const { name } = useParams();
-
+function Product({ product, showCart }) {
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    const findProduct = () => {
-      const productName = format(name, false);
-
-      const [product] = products.filter(
-        (product) => product.name === productName
-      );
-
-      setProduct(product);
-    };
-
-    findProduct();
-  }, [name, products]);
 
   const addProductCart = (sizeProduct) => {
     const productToCart = {
@@ -38,21 +21,40 @@ function Product({ products }) {
       selectedSize: sizeProduct,
     };
 
-    dispatch(setProductCart(productToCart));
+    dispatch(addProductToCart(productToCart));
+  };
+
+  const handleClickCart = () => {
+    dispatch(toggleCartVisible());
+  };
+
+  const toggleErrorSize = (hasError) => {
+    dispatch(toggleErrorSelectedSize(hasError));
+  };
+
+  const addSelectedSize = (size) => {
+    dispatch(setSelectedSize(size));
   };
 
   return (
     <Container>
-      <Header />
+      <Header handleClickCart={handleClickCart} />
       <ContainerSize>
-        <SingleProduct addProductCard={addProductCart} {...product} />
+        <SingleProduct
+          addProductCard={addProductCart}
+          toggleErrorSize={toggleErrorSize}
+          addSelectedSize={addSelectedSize}
+          {...product}
+        />
       </ContainerSize>
+      <Cart visible={showCart} handleHiddenCart={handleClickCart} />
     </Container>
   );
 }
 
 const mapStateToProps = (state) => ({
-  products: state.products.data,
+  product: state.product.product,
+  showCart: state.cart.visible,
 });
 
 export default connect(mapStateToProps)(Product);

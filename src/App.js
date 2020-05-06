@@ -7,7 +7,7 @@ import store from "./store";
 import GlobalStyles from "./styles/GlobalStyles";
 import Routes from "./routes";
 
-function App() {
+export default function App() {
   return (
     <>
       <GlobalStyles />
@@ -17,5 +17,3 @@ function App() {
     </>
   );
 }
-
-export default App;

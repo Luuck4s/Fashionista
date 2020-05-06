@@ -17,7 +17,7 @@ import { FiSearch, FiShoppingBag } from "react-icons/fi";
 
 import fashionista_img from "../../assets/fashionista.png";
 
-function Header({ count }) {
+function Header({ count, handleClickCart }) {
   const history = useHistory();
 
   const handleClickLogo = () => {
@@ -36,7 +36,7 @@ function Header({ count }) {
           <ButtonSearch className="button-search">
             <FiSearch size={20} />
           </ButtonSearch>
-          <ButtonCart className="button-cart" quantityItems={count}>
+          <ButtonCart onClick={handleClickCart} className="button-cart" quantityItems={count}>
             <FiShoppingBag size={20} />
           </ButtonCart>
         </SectionIcons>

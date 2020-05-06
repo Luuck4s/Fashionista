@@ -1,7 +1,5 @@
 import React from "react";
 
-import { useHistory } from "react-router-dom";
-
 import {
   Container,
   ImageProduct,
@@ -13,8 +11,6 @@ import {
   ActualPrice,
 } from "./styles";
 
-import { format } from "../../utils/FormatLink";
-
 import no_image from "../../assets/no_image.png";
 
 export default function Product({
@@ -24,13 +20,8 @@ export default function Product({
   regular_price,
   actual_price,
   discount_percentage,
+  handleClickProduct,
 }) {
-  const history = useHistory();
-
-  const handleClickProduct = () => {
-    history.push(`/product/${format(name, true)}`);
-  };
-
   return (
     <Container onClick={handleClickProduct}>
       {on_sale && <DiscountPercent>-{discount_percentage}</DiscountPercent>}

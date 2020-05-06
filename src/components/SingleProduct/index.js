@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
+
+import { connect } from "react-redux";
 
 import {
   Container,
@@ -21,7 +23,7 @@ import {
 
 import no_image from "../../assets/no_image.png";
 
-export default function SingleProduct({
+function SingleProduct({
   image,
   name,
   actual_price,
@@ -31,18 +33,22 @@ export default function SingleProduct({
   installments,
   sizes = [],
   addProductCard,
+  toggleErrorSize,
+  addSelectedSize,
+  errorSelected,
+  selectedSize,
 }) {
-  const [sizeSelected, setSizeSelected] = useState("");
-  const [sizeNotSelected, setSizeNotSelected] = useState(false);
-
   const handleAddProduct = () => {
-    if (!sizeSelected) {
-      setSizeNotSelected(true);
+    if (selectedSize == null) {
+      toggleErrorSize(true);
       return;
     }
+    toggleErrorSize(false);
+    addProductCard(selectedSize);
+  };
 
-    setSizeNotSelected(false);
-    addProductCard(sizeSelected);
+  const handleSelectedSize = (size) => {
+    addSelectedSize(size);
   };
 
   return (
@@ -60,7 +66,7 @@ export default function SingleProduct({
         </PriceProduct>
         <SizesProduct>
           <SizesText>Escolha o tamanho</SizesText>
-          {sizeNotSelected && (
+          {errorSelected && (
             <ErrorSizeNotSelected>
               É necessário escolher um tamanho!
             </ErrorSizeNotSelected>
@@ -70,8 +76,8 @@ export default function SingleProduct({
               (size) =>
                 size.available && (
                   <Size
-                    selected={sizeSelected === size.sku ? true : false}
-                    onClick={() => setSizeSelected(size.sku)}
+                    selected={selectedSize === size.sku ? true : false}
+                    onClick={() => handleSelectedSize(size.sku)}
                     key={size.sku}
                   >
                     {size.size}
@@ -87,3 +93,10 @@ export default function SingleProduct({
     </Container>
   );
 }
+
+const mapStateToProps = (state) => ({
+  errorSelected: state.product.errorSelectedSize,
+  selectedSize: state.product.selectedSize,
+});
+
+export default connect(mapStateToProps)(SingleProduct);
