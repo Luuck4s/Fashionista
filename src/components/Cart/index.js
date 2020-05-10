@@ -2,7 +2,7 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { connect, useDispatch } from "react-redux";
-import { removeProductToCart } from "../../store/actions/cart";
+import { removeProductToCart, addProductToCart } from "../../store/actions/cart";
 
 import CartProduct from "../CartProduct";
 
@@ -38,6 +38,12 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
     dispatch(removeProductToCart(newItemsCart));
   };
 
+  const AddProduct = (product) => {
+    delete product.quantity;
+
+    dispatch(addProductToCart(product));
+  };
+
   return (
     <Container active={visible}>
       <CartHeader>
@@ -47,11 +53,12 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
         <TitleCart>Sacola ({count})</TitleCart>
       </CartHeader>
       <CartContent>
-        {cartItems.reduce(groupProducts, []).map((item) => (
+        {cartItems.reduce(groupProducts, []).map((product) => (
           <CartProduct
             key={uuidv4()}
-            RemoveOneProduct={() => RemoveOneProduct(item)}
-            {...item}
+            RemoveOneProduct={() => RemoveOneProduct(product)}
+            AddProduct={() => AddProduct(product)}
+            {...product}
           />
         ))}
       </CartContent>

@@ -30,10 +30,15 @@ function CartProduct({
   sizes,
   quantity,
   RemoveOneProduct,
+  AddProduct,
 }) {
   const handleRemoveProduct = () => {
     RemoveOneProduct();
   };
+
+  const handleAddProduct = () => {
+    AddProduct();
+  }
 
   return (
     <Container>
@@ -51,11 +56,11 @@ function CartProduct({
           </ProductSize>
           <ProductQuantity>
             <ButtonQuantity onClick={handleRemoveProduct}>
-              <FiMinus size={15} />
+              <FiMinus size={16} />
             </ButtonQuantity>
             <Quantity>{quantity}</Quantity>
             <ButtonQuantity>
-              <FiPlus size={15} />
+              <FiPlus size={16} onClick={handleAddProduct} />
             </ButtonQuantity>
           </ProductQuantity>
         </ProductDetail>

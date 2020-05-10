@@ -52,7 +52,7 @@ export const ButtonQuantity = styled.button`
   border: 1px solid #212529;
   outline: none;
   display: flex;
-  padding: 2px;
+  
   transition: background 0.2s ease-in-out;
 
   :hover{
