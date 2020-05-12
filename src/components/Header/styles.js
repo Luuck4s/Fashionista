@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Container = styled.div`
   width: 100vw;
@@ -54,21 +54,25 @@ export const ButtonCart = styled(ButtonSearch)`
   position: relative;
   padding: 10px;
 
-  ::after{
-    content: '${(props) => props.quantityItems}';
-    font-size: 0.7rem;
-    font-weight: bold;
-    color: #FFF;
-    background: #E83B07;
-    width: 10px;
-    height: 10px;
-    border-radius: 100%;
-    padding: 3px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 5px;
-    right: 0;
-  }
+  ${(props) =>
+    props.quantityItems > 0 &&
+    css` 
+      ::after{
+        content: '${(props) => props.quantityItems}';
+        font-size: 0.7rem;
+        font-weight: bold;
+        color: #FFF;
+        background: #E83B07;
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        padding: 3px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 5px;
+        right: 0;
+      }
+  `}
 `;

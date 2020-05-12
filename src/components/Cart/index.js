@@ -2,11 +2,14 @@ import React from "react";
 import { v4 as uuidv4 } from "uuid";
 
 import { connect, useDispatch } from "react-redux";
-import { removeProductToCart, addProductToCart } from "../../store/actions/cart";
+import {
+  removeProductToCart,
+  addProductToCart,
+} from "../../store/actions/cart";
 
 import CartProduct from "../CartProduct";
 
-import { groupProducts } from "../../utils/GroupProducts";
+import { groupProducts, sumProducts } from "../../utils/Products";
 
 import { IoMdArrowBack } from "react-icons/io";
 
@@ -16,6 +19,8 @@ import {
   CartContent,
   TitleCart,
   ButtonBack,
+  TotalCart,
+  TotalText,
 } from "./styles";
 
 function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
@@ -62,6 +67,9 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
           />
         ))}
       </CartContent>
+      <TotalCart>
+        <TotalText>Subtotal - {sumProducts(cartItems)} </TotalText>
+      </TotalCart>
     </Container>
   );
 }

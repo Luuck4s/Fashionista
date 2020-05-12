@@ -68,3 +68,25 @@ export const CartContent = styled.div`
   padding-bottom: 70px;
   overflow-y: auto;
 `;
+
+export const TotalCart = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  background: #212529;
+  width: 100vw;
+  height: 50px;
+  padding: 14px 25px;
+
+  @media ${device.medium} {
+    justify-content: flex-start;
+  }
+`;
+
+export const TotalText = styled.p`
+  font-size: 0.95rem;
+  color: #f8f8f8;
+  font-weight: bold;
+`;
