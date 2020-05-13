@@ -90,3 +90,14 @@ export const TotalText = styled.p`
   color: #f8f8f8;
   font-weight: bold;
 `;
+
+export const EmptyCartContainer = styled.section`
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+`;
+
+export const ImageEmptyCart= styled.img`
+  width: 100%;
+`;

@@ -1,4 +1,6 @@
 import React from "react";
+import { Lottie } from "@crello/react-lottie";
+
 import { v4 as uuidv4 } from "uuid";
 
 import { connect, useDispatch } from "react-redux";
@@ -21,7 +23,10 @@ import {
   ButtonBack,
   TotalCart,
   TotalText,
+  EmptyCartContainer,
 } from "./styles";
+
+import lottieEmptyCart from "../../assets/lottie_empty_cart.json";
 
 function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
   const dispatch = useDispatch();
@@ -66,6 +71,17 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
         <TitleCart>Sacola ({count})</TitleCart>
       </CartHeader>
       <CartContent>
+        {cartItems.length === 0 && (
+          <EmptyCartContainer>
+            <Lottie
+              config={{
+                animationData: lottieEmptyCart,
+                loop: true,
+                autoplay: true,
+              }}
+            />
+          </EmptyCartContainer>
+        )}
         {cartItems.reduce(groupProducts, []).map((product) => (
           <CartProduct
             key={uuidv4()}
