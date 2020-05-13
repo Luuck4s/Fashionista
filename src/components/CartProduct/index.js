@@ -1,6 +1,6 @@
 import React from "react";
 
-import { FiPlus, FiMinus } from "react-icons/fi";
+import { FiPlus, FiMinus, FiTrash2 } from "react-icons/fi";
 
 import {
   Container,
@@ -31,14 +31,19 @@ function CartProduct({
   quantity,
   RemoveOneProduct,
   AddProduct,
+  RemoveProduct,
 }) {
-  const handleRemoveProduct = () => {
+  const handleRemoveOneProduct = () => {
     RemoveOneProduct();
+  };
+
+  const handleRemoveProduct = () => {
+    RemoveProduct();
   };
 
   const handleAddProduct = () => {
     AddProduct();
-  }
+  };
 
   return (
     <Container>
@@ -55,7 +60,7 @@ function CartProduct({
               .map((size) => size.size)}
           </ProductSize>
           <ProductQuantity>
-            <ButtonQuantity onClick={handleRemoveProduct}>
+            <ButtonQuantity onClick={handleRemoveOneProduct}>
               <FiMinus size={16} />
             </ButtonQuantity>
             <Quantity>{quantity}</Quantity>
@@ -67,9 +72,11 @@ function CartProduct({
         <ProductPrice>
           <ActualPrice>{actual_price}</ActualPrice>
           <Payment>{installments}</Payment>
+          <ButtonRemoveItem onClick={handleRemoveProduct}>
+            <FiTrash2 size={20} color={"#AA3333"} />
+          </ButtonRemoveItem>
         </ProductPrice>
       </ProductInformation>
-      <ButtonRemoveItem>Remover Item</ButtonRemoveItem>
     </Container>
   );
 }

@@ -43,6 +43,14 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
     dispatch(removeProductToCart(newItemsCart));
   };
 
+  const RemoveProduct = (product) => {
+    const newItemsCart = cartItems.filter(
+      (item) => item.selectedSize !== product.selectedSize
+    );
+
+    dispatch(removeProductToCart(newItemsCart));
+  };
+
   const AddProduct = (product) => {
     delete product.quantity;
 
@@ -63,6 +71,7 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
             key={uuidv4()}
             RemoveOneProduct={() => RemoveOneProduct(product)}
             AddProduct={() => AddProduct(product)}
+            RemoveProduct={() => RemoveProduct(product)}
             {...product}
           />
         ))}

@@ -91,4 +91,7 @@ export const ButtonRemoveItem = styled.button`
   outline: none;
   font-size: 0.89rem;
   color: #d72828;
+  align-self: flex-end;
+  margin-top: auto;
+  margin-bottom: auto;
 `;
