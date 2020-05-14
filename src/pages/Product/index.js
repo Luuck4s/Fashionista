@@ -1,7 +1,7 @@
 import React from "react";
 
 import { connect, useDispatch } from "react-redux";
-import { toggleCartVisible, addProductToCart } from "../../store/actions/cart";
+import { addProductToCart } from "../../store/actions/cart";
 import {
   setSelectedSize,
   toggleErrorSelectedSize,
@@ -12,7 +12,7 @@ import Cart from "../../components/Cart";
 
 import { Container, ContainerSize } from "./styles";
 
-function Product({ product, showCart }) {
+function Product({ product }) {
   const dispatch = useDispatch();
 
   const addProductCart = (sizeProduct) => {
@@ -22,10 +22,6 @@ function Product({ product, showCart }) {
     };
 
     dispatch(addProductToCart(productToCart));
-  };
-
-  const handleClickCart = () => {
-    dispatch(toggleCartVisible());
   };
 
   const toggleErrorSize = (hasError) => {
@@ -38,7 +34,7 @@ function Product({ product, showCart }) {
 
   return (
     <Container>
-      <Header handleClickCart={handleClickCart} />
+      <Header />
       <ContainerSize>
         <SingleProduct
           addProductCard={addProductCart}
@@ -47,14 +43,13 @@ function Product({ product, showCart }) {
           {...product}
         />
       </ContainerSize>
-      <Cart visible={showCart} handleHiddenCart={handleClickCart} />
+      <Cart />
     </Container>
   );
 }
 
 const mapStateToProps = (state) => ({
   product: state.product.product,
-  showCart: state.cart.visible,
 });
 
 export default connect(mapStateToProps)(Product);

@@ -4,9 +4,11 @@ import { Lottie } from "@crello/react-lottie";
 import { v4 as uuidv4 } from "uuid";
 
 import { connect, useDispatch } from "react-redux";
+
 import {
   removeProductToCart,
   addProductToCart,
+  toggleCartVisible,
 } from "../../store/actions/cart";
 
 import CartProduct from "../CartProduct";
@@ -28,7 +30,7 @@ import {
 
 import lottieEmptyCart from "../../assets/lottie_empty_cart.json";
 
-function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
+function Cart({ visible = false, cartItems = [], count }) {
   const dispatch = useDispatch();
 
   const RemoveOneProduct = (product) => {
@@ -60,6 +62,10 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
     delete product.quantity;
 
     dispatch(addProductToCart(product));
+  };
+
+  const handleHiddenCart = () => {
+    dispatch(toggleCartVisible());
   };
 
   return (
@@ -102,6 +108,7 @@ function Cart({ visible = false, handleHiddenCart, cartItems = [], count }) {
 const mapStateToProps = (state) => ({
   cartItems: state.cart.items,
   count: state.cart.count,
+  visible: state.cart.visible
 });
 
 export default connect(mapStateToProps)(Cart);

@@ -6,7 +6,7 @@ import api from "../../services/api";
 
 import { connect, useDispatch } from "react-redux";
 import { setInitialProducts } from "../../store/actions/products";
-import { toggleCartVisible } from "../../store/actions/cart";
+
 import {
   clearProductStore,
   setProductActived,
@@ -15,6 +15,7 @@ import {
 import Header from "../../components/Header";
 import Product from "../../components/Product";
 import Cart from "../../components/Cart";
+import Search from "../../components/Search";
 
 import { format } from "../../utils/FormatLink";
 import { v4 as uuidv4 } from "uuid";
@@ -27,7 +28,7 @@ import {
   ProductsArea,
 } from "./styles";
 
-function Home({ products, showCart }) {
+function Home({ products }) {
   const history = useHistory();
   const dispatch = useDispatch();
 
@@ -40,10 +41,6 @@ function Home({ products, showCart }) {
     getData();
   }, [dispatch]);
 
-  const handleClickCart = () => {
-    dispatch(toggleCartVisible());
-  };
-
   const handleClickProduct = (product) => {
     dispatch(setProductActived(product));
     history.push(`/product/${format(product.name, true)}`);
@@ -51,10 +48,10 @@ function Home({ products, showCart }) {
 
   return (
     <Container onLoad={() => dispatch(clearProductStore())}>
-      <Header handleClickCart={handleClickCart} />
+      <Header />
       <ContainerSize>
         <CountArea>
-          <CountProducts>{products.length} Items</CountProducts>
+          <CountProducts>{products.length} peças</CountProducts>
         </CountArea>
         <ProductsArea>
           {products.map((product) => (
@@ -66,14 +63,14 @@ function Home({ products, showCart }) {
           ))}
         </ProductsArea>
       </ContainerSize>
-      <Cart visible={showCart} handleHiddenCart={handleClickCart} />
+      <Cart />
+      <Search />
     </Container>
   );
 }
 
 const mapStateToProps = (state) => ({
   products: state.products.data,
-  showCart: state.cart.visible,
 });
 
 export default connect(mapStateToProps)(Home);

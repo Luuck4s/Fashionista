@@ -29,3 +29,16 @@ export const sumProducts = (products = []) => {
 
   return totalFormart;
 };
+
+const normalizeWord = (word) => {
+  return word
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase();
+};
+
+export const searchProductsByName = (products = [], searchText) => {
+  return products.filter((product) =>
+    normalizeWord(product.name).includes(normalizeWord(searchText))
+  );
+};
