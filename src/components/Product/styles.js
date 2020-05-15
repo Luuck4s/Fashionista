@@ -57,6 +57,7 @@ export const DetailProduct = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding-bottom: 10px;
 `;
 
 export const ProductName = styled.h3`
