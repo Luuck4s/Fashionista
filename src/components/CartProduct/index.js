@@ -61,11 +61,11 @@ function CartProduct({
           </ProductSize>
           <ProductQuantity>
             <ButtonQuantity onClick={handleRemoveOneProduct}>
-              <FiMinus size={16} />
+              <FiMinus size={17} />
             </ButtonQuantity>
             <Quantity>{quantity}</Quantity>
             <ButtonQuantity>
-              <FiPlus size={16} onClick={handleAddProduct} />
+              <FiPlus size={17} onClick={handleAddProduct} />
             </ButtonQuantity>
           </ProductQuantity>
         </ProductDetail>

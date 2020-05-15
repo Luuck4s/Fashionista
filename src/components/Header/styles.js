@@ -48,6 +48,11 @@ export const ButtonSearch = styled.button`
   border: none;
   background: transparent;
   outline: 0px;
+  transition: transform 0.3s;
+
+  :hover {
+    transform: scale(0.95);
+  }
 `;
 
 export const ButtonCart = styled(ButtonSearch)`

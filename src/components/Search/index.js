@@ -48,7 +48,7 @@ function Search({ visible, products, productsFound }) {
       dispatch(setProductsFound([]));
     }
 
-    if (searchText.trim().length >= 3) {
+    if (searchText.trim().length !== 0) {
       const productsFound = searchProductsByName(products, searchText);
 
       dispatch(setProductsFound(productsFound));

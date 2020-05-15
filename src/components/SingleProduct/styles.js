@@ -109,7 +109,13 @@ export const Size = styled.div`
   font-size: 1rem;
   font-weight: bold;
   color: #000;
-  transition: background 0.3s;
+  transition: all 0.3s;
+
+  :hover {
+    background-color: #212529;
+    color: #fff;
+    border-color: #212529;
+  }
 
   ${(props) =>
     props.selected &&

@@ -3,13 +3,20 @@ import styled, { css } from "styled-components";
 import { device } from "../../styles/Device";
 
 export const Container = styled.section`
-  text-decoration: none;
   display: flex;
   flex-direction: column;
   width: calc((100% / 1) - 10px);
   margin: 10px auto;
+  background: #fefefe;
+  border-radius: 5px;
   position: relative;
   cursor: pointer;
+  transition: transform 0.3s;
+
+  :hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
 
   @media ${device.small} {
     width: calc((100% / 2) - 10px);
@@ -31,6 +38,7 @@ export const ImageProduct = styled.img`
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 5px;
   color: #000;
 `;
 

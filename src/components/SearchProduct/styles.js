@@ -8,6 +8,12 @@ export const Container = styled.section`
   padding: 10px 20px;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.08);
   cursor: pointer;
+  transition: transform 0.3s;
+
+  :hover {
+    transform: scale(0.98);
+    opacity: 0.9;
+  }
 `;
 
 export const ImageArea = styled.figure`
