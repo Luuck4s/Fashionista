@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { connect, useDispatch } from "react-redux";
 
 import {
-  removeProductToCart,
+  removeProductFromCart,
   addProductToCart,
   toggleCartVisible,
 } from "../../store/actions/cart";
@@ -15,7 +15,7 @@ import CartProduct from "../CartProduct";
 
 import { groupProducts, sumProducts } from "../../utils/Products";
 
-import { IoMdArrowBack } from "react-icons/io";
+import { AiOutlineClose } from "react-icons/ai";
 
 import {
   Container,
@@ -47,7 +47,7 @@ function Cart({ visible = false, cartItems = [], count }) {
       (_item, index) => index !== indexProduct
     );
 
-    dispatch(removeProductToCart(newItemsCart));
+    dispatch(removeProductFromCart(newItemsCart));
   };
 
   const RemoveProduct = (product) => {
@@ -55,7 +55,7 @@ function Cart({ visible = false, cartItems = [], count }) {
       (item) => item.selectedSize !== product.selectedSize
     );
 
-    dispatch(removeProductToCart(newItemsCart));
+    dispatch(removeProductFromCart(newItemsCart));
   };
 
   const AddProduct = (product) => {
@@ -72,7 +72,7 @@ function Cart({ visible = false, cartItems = [], count }) {
     <Container active={visible}>
       <CartHeader>
         <ButtonBack onClick={handleHiddenCart} className="button-back">
-          <IoMdArrowBack size={25} color={"#212529"} />
+          <AiOutlineClose size={20} color={"#212529"} />
         </ButtonBack>
         <TitleCart>Sacola ({count})</TitleCart>
       </CartHeader>
@@ -108,7 +108,7 @@ function Cart({ visible = false, cartItems = [], count }) {
 const mapStateToProps = (state) => ({
   cartItems: state.cart.items,
   count: state.cart.count,
-  visible: state.cart.visible
+  visible: state.cart.visible,
 });
 
 export default connect(mapStateToProps)(Cart);

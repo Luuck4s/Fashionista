@@ -6,9 +6,11 @@ import {
   setSelectedSize,
   toggleErrorSelectedSize,
 } from "../../store/actions/product";
+
 import Header from "../../components/Header";
 import SingleProduct from "../../components/SingleProduct";
 import Cart from "../../components/Cart";
+import Search from "../../components/Search";
 
 import { Container, ContainerSize } from "./styles";
 
@@ -44,6 +46,7 @@ function Product({ product }) {
         />
       </ContainerSize>
       <Cart />
+      <Search />
     </Container>
   );
 }

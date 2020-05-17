@@ -21,7 +21,7 @@ const cart = (state = INITIAL_STATE, action) => {
     };
   }
 
-  if (action.type === "REMOVE_PRODUCT_TO_CART") {
+  if (action.type === "REMOVE_PRODUCT_FROM_CART") {
     const newItems = [...action.products];
     return {
       ...state,

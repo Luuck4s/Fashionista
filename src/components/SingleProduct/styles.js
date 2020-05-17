@@ -135,7 +135,7 @@ export const ButtonAddCart = styled.button`
   border-radius: 0.5rem;
   border: none;
   outline: none;
-  box-shadow: 0 0.2rem 2rem 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
   color: #fff;
   padding: 0.9rem;
   text-align: center;
@@ -146,7 +146,7 @@ export const ButtonAddCart = styled.button`
   cursor: pointer;
 
   :hover {
-    transform: scale(0.98);
+    transform: scale(0.99);
   }
 
   @media ${device.medium} {

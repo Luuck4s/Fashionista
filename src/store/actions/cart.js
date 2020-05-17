@@ -5,9 +5,9 @@ export const addProductToCart = (product) => {
   };
 };
 
-export const removeProductToCart = (products) => {
+export const removeProductFromCart = (products) => {
   return {
-    type: "REMOVE_PRODUCT_TO_CART",
+    type: "REMOVE_PRODUCT_FROM_CART",
     products,
   };
 };

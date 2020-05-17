@@ -33,7 +33,7 @@ import {
   AreaAnimation
 } from "./styles";
 
-import { IoMdArrowBack } from "react-icons/io";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Search({ visible, products, productsFound }) {
   const dispatch = useDispatch();
@@ -66,7 +66,7 @@ function Search({ visible, products, productsFound }) {
     <Container active={visible}>
       <SearchHeader>
         <ButtonBack onClick={handleHideSearch} className="button-back">
-          <IoMdArrowBack size={25} color={"#212529"} />
+          <AiOutlineClose size={20} color={"#212529"} />
         </ButtonBack>
         <TitleSearch>Buscar Produtos</TitleSearch>
       </SearchHeader>
