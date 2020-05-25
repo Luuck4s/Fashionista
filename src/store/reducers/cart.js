@@ -5,32 +5,32 @@ const INITIAL_STATE = {
 };
 
 const cart = (state = INITIAL_STATE, action) => {
-  if (action.type === "ADD_PRODUCT_TO_CART") {
-    const newItems = [...state.items, action.product];
-    return {
-      ...state,
-      items: newItems,
-      count: newItems.length,
-    };
-  }
+  switch (action.type) {
+    case "ADD_PRODUCT_TO_CART":
+      const newItems = [...state.items, action.product];
+      return {
+        ...state,
+        items: newItems,
+        count: newItems.length,
+      };
 
-  if (action.type === "TOGGLE_CART_VISIBLE") {
-    return {
-      ...state,
-      visible: !state.visible,
-    };
-  }
+    case "TOGGLE_CART_VISIBLE":
+      return {
+        ...state,
+        visible: !state.visible,
+      };
 
-  if (action.type === "REMOVE_PRODUCT_FROM_CART") {
-    const newItems = [...action.products];
-    return {
-      ...state,
-      items: newItems,
-      count: newItems.length,
-    };
-  }
+    case "REMOVE_PRODUCT_TO_CART":
+      const newProducts = [...action.products];
+      return {
+        ...state,
+        items: newProducts,
+        count: newProducts.length,
+      };
 
-  return state;
+    default:
+      return state;
+  }
 };
 
 export default cart;

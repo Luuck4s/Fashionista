@@ -9,6 +9,7 @@ import { connect, useDispatch } from "react-redux";
 import {
   toggleSearchVisible,
   setProductsFound,
+  setSearchText,
 } from "../../store/actions/search";
 
 import { setProductActived } from "../../store/actions/product";
@@ -30,12 +31,12 @@ import {
   SearchForm,
   SearchInput,
   SearchContent,
-  AreaAnimation
+  AreaAnimation,
 } from "./styles";
 
 import { AiOutlineClose } from "react-icons/ai";
 
-function Search({ visible, products, productsFound }) {
+function Search({ visible, products, productsFound, textSearch }) {
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -43,13 +44,18 @@ function Search({ visible, products, productsFound }) {
     dispatch(toggleSearchVisible());
   };
 
-  const handleSearch = (searchText) => {
-    if (!searchText) {
+  const handleSearchInput = (inputText) => {
+    dispatch(setSearchText(inputText));
+    handleSearch();
+  };
+
+  const handleSearch = () => {
+    if (!textSearch) {
       dispatch(setProductsFound([]));
     }
 
-    if (searchText.trim().length !== 0) {
-      const productsFound = searchProductsByName(products, searchText);
+    if (textSearch.trim().length !== 0) {
+      const productsFound = searchProductsByName(products, textSearch);
 
       dispatch(setProductsFound(productsFound));
     }
@@ -74,7 +80,8 @@ function Search({ visible, products, productsFound }) {
         <SearchInput
           placeholder="Buscar por produtos"
           type="text"
-          onChange={(e) => handleSearch(e.target.value)}
+          value={textSearch}
+          onChange={(e) => handleSearchInput(e.target.value)}
         />
       </SearchForm>
       <SearchContent>
@@ -85,7 +92,6 @@ function Search({ visible, products, productsFound }) {
                 animationData: lottieSearch,
                 loop: true,
                 autoplay: true,
-              
               }}
             />
           </AreaAnimation>
@@ -106,6 +112,7 @@ function Search({ visible, products, productsFound }) {
 const mapStateToProps = (state) => ({
   visible: state.search.visible,
   productsFound: state.search.productsFound,
+  textSearch: state.search.searchText,
   products: state.products.data,
 });
 

@@ -4,11 +4,17 @@ export const toggleSearchVisible = () => {
   };
 };
 
-
 export const setProductsFound = (products) => {
   return {
     type: "SET_PRODUCTS_FOUND",
-    products
+    products,
+  };
+};
+
+export const setSearchText = (searchText) => {
+  return {
+    type: "SET_SEARCH_TEXT",
+    searchText,
   };
 };
 

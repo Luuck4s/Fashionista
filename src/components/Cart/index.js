@@ -6,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
 import { connect, useDispatch } from "react-redux";
 
 import {
-  removeProductFromCart,
+  removeProductToCart,
   addProductToCart,
   toggleCartVisible,
 } from "../../store/actions/cart";
@@ -47,7 +47,7 @@ function Cart({ visible = false, cartItems = [], count }) {
       (_item, index) => index !== indexProduct
     );
 
-    dispatch(removeProductFromCart(newItemsCart));
+    dispatch(removeProductToCart(newItemsCart));
   };
 
   const RemoveProduct = (product) => {
@@ -55,7 +55,7 @@ function Cart({ visible = false, cartItems = [], count }) {
       (item) => item.selectedSize !== product.selectedSize
     );
 
-    dispatch(removeProductFromCart(newItemsCart));
+    dispatch(removeProductToCart(newItemsCart));
   };
 
   const AddProduct = (product) => {

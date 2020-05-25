@@ -3,10 +3,13 @@ const INITIAL_STATE = {
 };
 
 const products = (state = INITIAL_STATE, action) => {
-  if (action.type === "SET_INITAL_PRODUCTS") {
-    return { ...state, data: action.products };
+  switch (action.type) {
+    case "SET_INITAL_PRODUCTS":
+      return { ...state, data: action.products };
+
+    default:
+      return state;
   }
-  return state;
 };
 
 export default products;
