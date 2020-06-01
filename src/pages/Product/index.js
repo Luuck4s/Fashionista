@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import { connect, useDispatch } from "react-redux";
 import { addProductToCart } from "../../store/actions/cart";
@@ -16,6 +16,11 @@ import { Container, ContainerSize } from "./styles";
 
 function Product({ product }) {
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    
+
+  }, [product])
 
   const addProductCart = (sizeProduct) => {
     const productToCart = {

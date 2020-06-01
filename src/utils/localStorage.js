@@ -1,5 +1,5 @@
-export const getState = () => {
-  const state = localStorage.getItem("state");
+export const getState = (key) => {
+  const state = localStorage.getItem(key);
 
   if (state !== null) {
     return JSON.parse(state);
@@ -8,7 +8,7 @@ export const getState = () => {
   return undefined;
 };
 
-export const setState = (state) => {
+export const setState = (key, state) => {
   const stateToSave = JSON.stringify(state);
-  localStorage.setItem("state", stateToSave);
+  localStorage.setItem(key, stateToSave);
 };

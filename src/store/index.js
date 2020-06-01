@@ -3,14 +3,17 @@ import rootReducer from "./reducers/index";
 
 import { getState, setState } from "../utils/localStorage";
 
-const persistedState = getState();
+const persistedStateCart = getState("cart");
+const persistedStateProduct = getState("product");
 
-const store = createStore(rootReducer, persistedState);
+const store = createStore(rootReducer, {
+  cart: persistedStateCart?.cart,
+  product: persistedStateProduct?.product,
+});
 
 store.subscribe(() => {
-  setState({
-    cart: store.getState().cart,
-  });
+  setState("cart", { cart: store.getState().cart });
+  setState("product", { product: store.getState().product });
 });
 
 export default store;
