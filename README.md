@@ -23,7 +23,7 @@
 
 ## :telescope: Projeto
 
-**Fashionista**  é a aplicação desenvolvida como projeto prático da aceleração de React realizada pela  [Codenation](https://www.codenation.dev/), consiste em um e-commerce de moda feminina com objetivo de garantir a melhor experiencia possível para os usuários interagirem com os produtos.
+**Fashionista**  é a aplicação desenvolvida como projeto prático da aceleração de React realizada pela  [Codenation](https://www.codenation.dev/), consiste em um e-commerce de moda feminina com objetivo de garantir a melhor experiencia de uso para os usuários.
 Para visualizar o projeto em funcionamento [clique aqui.](https://luuck4s-react-fashionista.netlify.app/)
 
 
