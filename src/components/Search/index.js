@@ -46,16 +46,13 @@ function Search({ visible, products, productsFound, textSearch }) {
 
   const handleSearchInput = (inputText) => {
     dispatch(setSearchText(inputText));
-    handleSearch();
-  };
 
-  const handleSearch = () => {
-    if (!textSearch) {
+    if (!inputText) {
       dispatch(setProductsFound([]));
     }
 
-    if (textSearch.trim().length !== 0) {
-      const productsFound = searchProductsByName(products, textSearch);
+    if (inputText.trim().length !== 0) {
+      const productsFound = searchProductsByName(products, inputText);
 
       dispatch(setProductsFound(productsFound));
     }
