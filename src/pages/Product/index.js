@@ -12,15 +12,19 @@ import SingleProduct from "../../components/SingleProduct";
 import Cart from "../../components/Cart";
 import Search from "../../components/Search";
 
+import { useHistory } from "react-router-dom";
+
 import { Container, ContainerSize } from "./styles";
 
 function Product({ product }) {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   useEffect(() => {
-    
-
-  }, [product])
+    if (!product?.name) {
+      history.push("/");
+    }
+  }, [history, product]);
 
   const addProductCart = (sizeProduct) => {
     const productToCart = {
