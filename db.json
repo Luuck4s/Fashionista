@@ -1,14 +1,7 @@
 [
   {
     "name": "VESTIDO TRANSPASSE BOW",
-    "style": "20002605",
-    "code_color": "20002605_613",
-    "color_slug": "tapecaria",
-    "color": "TAPEÇARIA",
-    "on_sale": false,
     "regular_price": "R$ 199,90",
-    "actual_price": "R$ 199,90",
-    "discount_percentage": "",
     "installments": "3x R$ 66,63",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912",
     "sizes": [
@@ -41,14 +34,7 @@
   },
   {
     "name": "REGATA ALCINHA FOLK",
-    "style": "20002570",
-    "code_color": "20002570_614",
-    "color_slug": "preto",
-    "color": "PRETO",
-    "on_sale": false,
     "regular_price": "R$ 99,90",
-    "actual_price": "R$ 99,90",
-    "discount_percentage": "",
     "installments": "3x R$ 33,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002570_002_catalog_1.jpg?1459948578",
     "sizes": [
@@ -81,14 +67,7 @@
   },
   {
     "name": "TOP CROPPED SUEDE",
-    "style": "20002575",
-    "code_color": "20002575_035",
-    "color_slug": "caramelo",
-    "color": "CARAMELO",
-    "on_sale": false,
     "regular_price": "R$ 129,90",
-    "actual_price": "R$ 129,90",
-    "discount_percentage": "",
     "installments": "3x R$ 43,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002575_027_catalog_1.jpg?1459537946",
     "sizes": [
@@ -121,14 +100,7 @@
   },
   {
     "name": "BATA DECOTE FLUID",
-    "style": "20002581",
-    "code_color": "20002581_614",
-    "color_slug": "mini-folk",
-    "color": "MINI FOLK",
-    "on_sale": false,
     "regular_price": "R$ 149,90",
-    "actual_price": "R$ 149,90",
-    "discount_percentage": "",
     "installments": "3x R$ 49,97",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002581_614_catalog_1.jpg?1459536611",
     "sizes": [
@@ -161,16 +133,8 @@
   },
   {
     "name": "T-SHIRT LEATHER DULL",
-    "style": "20002602",
-    "code_color": "20002602_027",
-    "color_slug": "marinho",
-    "color": "MARINHO",
-    "on_sale": true,
     "regular_price": "R$ 139,90",
-    "actual_price": "R$ 119,90",
-    "discount_percentage": "12%",
     "installments": "3x R$ 39,97",
-    "image": "",
     "sizes": [
       {
         "available": true,
@@ -201,14 +165,7 @@
   },
   {
     "name": "CAMISA SUEDE SPAN",
-    "style": "20002584",
-    "code_color": "20002584_027",
-    "color_slug": "burgundy",
-    "color": "BURGUNDY",
-    "on_sale": false,
     "regular_price": "R$ 189,90",
-    "actual_price": "R$ 189,90",
-    "discount_percentage": "",
     "installments": "3x R$ 63,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002584_035_catalog_1.jpg?1459947139",
     "sizes": [
@@ -241,14 +198,7 @@
   },
   {
     "name": "CALÇA CLASSIC PRINT",
-    "style": "20002634",
-    "code_color": "20002634_613",
-    "color_slug": "free-dots",
-    "color": "FREE DOTS",
-    "on_sale": false,
     "regular_price": "R$ 159,90",
-    "actual_price": "R$ 159,90",
-    "discount_percentage": "",
     "installments": "3x R$ 53,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002634_613_catalog_1.jpg?1459548109",
     "sizes": [
@@ -281,14 +231,7 @@
   },
   {
     "name": "REGATA ALCINHA FOLK",
-    "style": "20002570",
-    "code_color": "20002570_612",
-    "color_slug": "off-white",
-    "color": "OFF WHITE",
-    "on_sale": false,
     "regular_price": "R$ 99,90",
-    "actual_price": "R$ 99,90",
-    "discount_percentage": "",
     "installments": "3x R$ 33,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002570_029_catalog_1.jpg?1459948578",
     "sizes": [
@@ -321,14 +264,7 @@
   },
   {
     "name": "MACAQUINHO ALFAIATARIA PEACE",
-    "style": "20002612",
-    "code_color": "20002612_612",
-    "color_slug": "floral-red",
-    "color": "FLORAL RED",
-    "on_sale": false,
     "regular_price": "R$ 149,90",
-    "actual_price": "R$ 149,90",
-    "discount_percentage": "",
     "installments": "3x R$ 49,97",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002612_612_catalog_1.jpg?1459531023",
     "sizes": [
@@ -361,14 +297,7 @@
   },
   {
     "name": "BOLSA FLAP TRIANGLE",
-    "style": "20002945",
-    "code_color": "20002945_027",
-    "color_slug": "caramelo",
-    "color": "CARAMELO",
-    "on_sale": true,
     "regular_price": "R$ 199,90",
-    "actual_price": "R$ 159,90",
-    "discount_percentage": "25%",
     "installments": "3x R$ 53,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002945_027_catalog_1.jpg?1459540966",
     "sizes": [
@@ -381,14 +310,7 @@
   },
   {
     "name": "VESTIDO LONGO FLOAT",
-    "style": "20002606",
-    "code_color": "20002606_612",
-    "color_slug": "tapecaria",
-    "color": "TAPEÇARIA",
-    "on_sale": false,
     "regular_price": "R$ 219,90",
-    "actual_price": "R$ 219,90",
-    "discount_percentage": "",
     "installments": "3x R$ 73,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002606_615_catalog_1.jpg?1459515279",
     "sizes": [
