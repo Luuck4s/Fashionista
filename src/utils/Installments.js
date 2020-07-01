@@ -1,5 +1,7 @@
 export const installments = (regularPrice) => {
-  const [, price] = regularPrice.split(" ");
+  let [, price] = regularPrice.split(" ");
+
+  price = price.replace(",", ".");
 
   const installments = Math.floor(Number(price) / 3);
 
