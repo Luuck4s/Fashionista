@@ -13,14 +13,15 @@ import {
 
 import no_image from "../../assets/no_image.png";
 
+import { installments as FuncInstallments } from "../../utils/Installments";
+
 function SearchProduct({
   image,
   name,
-  actual_price,
+  regular_price,
   installments,
   handleClickProduct,
 }) {
- 
   return (
     <Container onClick={handleClickProduct}>
       <ImageArea>
@@ -30,8 +31,8 @@ function SearchProduct({
         <ProductName>{name}</ProductName>
       </ProductDetail>
       <ProductPrice>
-        <ActualPrice>{actual_price}</ActualPrice>
-        <Payment>{installments}</Payment>
+        <ActualPrice>{regular_price}</ActualPrice>
+        <Payment>{FuncInstallments(regular_price)}</Payment>
       </ProductPrice>
     </Container>
   );

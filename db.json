@@ -2,7 +2,6 @@
   {
     "name": "VESTIDO TRANSPASSE BOW",
     "regular_price": "R$ 199,90",
-    "installments": "3x R$ 66,63",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002605_615_catalog_1.jpg?1460136912",
     "sizes": [
       {
@@ -35,7 +34,6 @@
   {
     "name": "REGATA ALCINHA FOLK",
     "regular_price": "R$ 99,90",
-    "installments": "3x R$ 33,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002570_002_catalog_1.jpg?1459948578",
     "sizes": [
       {
@@ -68,7 +66,6 @@
   {
     "name": "TOP CROPPED SUEDE",
     "regular_price": "R$ 129,90",
-    "installments": "3x R$ 43,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002575_027_catalog_1.jpg?1459537946",
     "sizes": [
       {
@@ -101,7 +98,6 @@
   {
     "name": "BATA DECOTE FLUID",
     "regular_price": "R$ 149,90",
-    "installments": "3x R$ 49,97",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002581_614_catalog_1.jpg?1459536611",
     "sizes": [
       {
@@ -134,7 +130,6 @@
   {
     "name": "T-SHIRT LEATHER DULL",
     "regular_price": "R$ 139,90",
-    "installments": "3x R$ 39,97",
     "sizes": [
       {
         "available": true,
@@ -166,7 +161,6 @@
   {
     "name": "CAMISA SUEDE SPAN",
     "regular_price": "R$ 189,90",
-    "installments": "3x R$ 63,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002584_035_catalog_1.jpg?1459947139",
     "sizes": [
       {
@@ -199,7 +193,6 @@
   {
     "name": "CALÇA CLASSIC PRINT",
     "regular_price": "R$ 159,90",
-    "installments": "3x R$ 53,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002634_613_catalog_1.jpg?1459548109",
     "sizes": [
       {
@@ -232,7 +225,6 @@
   {
     "name": "REGATA ALCINHA FOLK",
     "regular_price": "R$ 99,90",
-    "installments": "3x R$ 33,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002570_029_catalog_1.jpg?1459948578",
     "sizes": [
       {
@@ -265,7 +257,6 @@
   {
     "name": "MACAQUINHO ALFAIATARIA PEACE",
     "regular_price": "R$ 149,90",
-    "installments": "3x R$ 49,97",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002612_612_catalog_1.jpg?1459531023",
     "sizes": [
       {
@@ -298,7 +289,6 @@
   {
     "name": "BOLSA FLAP TRIANGLE",
     "regular_price": "R$ 199,90",
-    "installments": "3x R$ 53,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002945_027_catalog_1.jpg?1459540966",
     "sizes": [
       {
@@ -311,7 +301,6 @@
   {
     "name": "VESTIDO LONGO FLOAT",
     "regular_price": "R$ 219,90",
-    "installments": "3x R$ 73,30",
     "image": "https://d3l7rqep7l31az.cloudfront.net/images/products/20002606_615_catalog_1.jpg?1459515279",
     "sizes": [
       {

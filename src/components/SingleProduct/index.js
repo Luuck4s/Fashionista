@@ -23,6 +23,8 @@ import {
 
 import no_image from "../../assets/no_image.png";
 
+import { installments as FuncInstallments } from "../../utils/Installments";
+
 function SingleProduct({
   image,
   name,
@@ -62,7 +64,7 @@ function SingleProduct({
         <PriceProduct>
           <RegularPrice scratched={on_sale}>{regular_price}</RegularPrice>
           {on_sale && <ActualPrice>{actual_price}</ActualPrice>}
-          <Payment>em até {installments}</Payment>
+          <Payment>em até {FuncInstallments(regular_price)}</Payment>
         </PriceProduct>
         <SizesProduct>
           <SizesText>Escolha o tamanho</SizesText>

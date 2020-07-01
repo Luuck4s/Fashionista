@@ -21,9 +21,11 @@ import {
 
 import no_image from "../../assets/no_image.png";
 
+import { installments as FuncInstallments } from "../../utils/Installments";
+
 function CartProduct({
   name,
-  actual_price,
+  regular_price,
   installments,
   image,
   selectedSize,
@@ -70,8 +72,8 @@ function CartProduct({
           </ProductQuantity>
         </ProductDetail>
         <ProductPrice>
-          <ActualPrice>{actual_price}</ActualPrice>
-          <Payment>{installments}</Payment>
+          <ActualPrice>{regular_price}</ActualPrice>
+          <Payment>{FuncInstallments(regular_price)}</Payment>
           <ButtonRemoveItem onClick={handleRemoveProduct}>
             <FiTrash2 size={20} color={"#AA3333"} />
           </ButtonRemoveItem>
