@@ -34,7 +34,7 @@ function Home({ products }) {
 
   useEffect(() => {
     const getData = async () => {
-      const response = await api.get("/db");
+      const response = await api.get("/Catalog");
       dispatch(setInitialProducts(response.data));
     };
 
